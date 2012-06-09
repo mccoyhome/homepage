@@ -207,7 +207,7 @@ class SignUp(BaseHandler):
                 hashed_pw = make_hash(E_username, E_password)
                 a = Users(username=E_username, password=hashed_pw, email=E_email)
                 a.put()
-                mail.send_mail('mccoyhome@gmail.com' ,'mccoyhome@btinternet.com',
+                mail.send_mail('mccoyhome@gmail.com' ,'john.mccoyhome.co.uk',
                     'New user signed up',E_username + ' email - ' + E_email)
                 make_session(self, E_username,E_password)
                 name = logged_in(self)
@@ -330,7 +330,7 @@ class NewPost(BaseHandler):
             contents = blog_content(True)
             ident = str(int(c.key().id()))
             memcache.set(ident, None)
-            mail.send_mail('mccoyhome@gmail.com' ,'mccoyhome@btinternet.com',
+            mail.send_mail('mccoyhome@gmail.com' ,'john.mccoyhome.co.uk',
                 'New post - %s - by %s' % (subject, name),
                 content)
 
