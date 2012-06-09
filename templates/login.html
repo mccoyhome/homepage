@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}login{% endblock %}
+
+{% block head %}Log In{% endblock %}
+
+{% block menu %}
+    <li><a href='/'>Home</a></li><br>
+    <br><br><br><br>
+    </ol>
+    <input type="submit" value="Log in">
+{% endblock %}
+
+{% block pane %}
+   <table>
+    <tr>
+      <td class="label">
+        Username
+      </td>
+      <td>
+        <input type="text" name="username" value="{{username}}">
+      </td>
+      <div class="error" style="background-color:#FFdab9;;width:508px">{{bad_name}}</div>
+    </tr>
+
+    <tr>
+      <td class="label">
+        Password
+      </td>
+      <td>
+        <input type="password" name="password" value="">
+      </td>
+        <div class="error" style="background-color:#FFdab9;;width:508px">{{bad_pass}}</div>
+    </tr>
+
+    </table>
+    <div class="error">{{log_error}}
+      {% if log_error %}
+        <input type="button" value="Sign Up" onclick="location.href='/blog/signup'" />
+      {% endif %}
+    </div>
+ {% endblock %}

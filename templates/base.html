@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<meta charset=utf-8>
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <title>
+      {% block title %}{% endblock %}
+    </title>
+  </head>
+
+  <body>
+
+   <script type="text/javascript" src="/js/javascript_cookies.js"></script>
+
+   <script type="text/javascript">
+    Set_Cookie( 'test', 'none', '', '/', '', '' );
+
+    if (!Get_Cookie('test'))
+    {
+      document.write('<h1 style="border-top: 1px solid #FF8F00;border-bottom:  1px solid #FF8F00;background-color: #F7FFBB;margin: 1em 0; auto;padding: 2px 15px;text-align:center;"><strong>You must allow cookies</h1>');
+    }
+    
+    Delete_Cookie( 'test', '/', '' );
+   
+    </script>
+
+       <div id="container" style="width:800px">
+
+        <div id="header" style="background-color:#FFdab9;">
+          <h1 style="margin-bottom:0;" class="centre">McCoyHome</h1>
+            <h3 class="centre">{% block head %}{% endblock %}</h3>    
+            <hr>
+        </div>
+
+      <section>
+  			{% block image %}{% endblock %}
+
+        <form method="post">
+
+          <div id="menu" style="background-color:#eee8aa;height:250px;width:131px;float:left;">
+            <label>
+              {% block menu %}{% endblock %}
+            </label>
+          </div>
+
+          <div id="rightpane" style="background-color:#0;width:650px;float:right;">
+            {% block pane %}{% endblock %}
+          </div>
+
+        </form>
+
+        <div id="footer" style="background-color:#FFdab9;clear:both;text-align:right;">
+          <hr>
+          {% if name == "John" %}
+            <a href='http://help.mccoyhome.co.uk'>Go to Proxy</a>
+          {% endif %}
+          <br>
+          <img src="/images/appengine-noborder-120x30.gif"alt="Powered by Google App Engine">
+        </div>
+
+      </section>
+
+  </body>
+</html>

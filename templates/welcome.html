@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block head %}Welcome, {{name}}{% endblock %}
+
+{% block menu %}
+    <li><a href='/'>Home</a></li><br>
+    <li><a href='/blog'>Blog</a></li><br>
+    </ol>
+{% endblock %}
+
+{% block pane %}
+      You can now <a href='/blog'>read</a> and <a href='/blog/newpost'>post to the blog.</a>
+{% endblock %}

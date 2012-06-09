@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}McCoyHome{% endblock %}
+
+{% block head %}Hello {{name}}
+  {%if name == "Visitor" %}
+    </div>
+      <h1>Privacy</h1>
+      <div><p>The Information Commissioner&#8217;s Office (ICO) has stated that new cookie compliance rules come into force today (26th May, 2012).  It indicates that &#8220;<a href="http://www.ico.gov.uk/news/blog/2012/updated-ico-advice-guidance-e-privacy-directive-eu-cookie-law.aspx">Implied consent is a valid form of consent&#8220;</a>.</p><p>This site uses a cookie to ensure that only logged in users can view and add to the contents, and I do not want to assume your consent to this. So if you want to sign up or read anything on this site, you must give consent to the use of cookies for this purpose. You are required to give explict consent by clicking below.</p><p>This has been a public service announcement made necessary by some damn' fool European Commission directive that confused a goal (securing web users' privacy) with a technology (cookies). <a href="http://www.antipope.org/charlie/blog-static/2012/05/implied-consent.html">Thanks Charlie</a></p>
+      </div>
+
+      <form method="post" >
+
+        <div id="banner">
+          <strong> <label>I accept cookies from this site.</label></strong><br />
+          
+           <input type="submit" value="Continue" />
+        </div>
+
+      </form>
+    </div>
+  {% endif %}
+
+{% endblock %}
+
+{% block image %}
+
+    <div style="background-color:#0;height:248px;width:223px;float:right;">
+      <img alt="Connor reaching (92K)" src="/images/ConnorReaching.jpg" height="238" width="213" />
+    </div>
+{% endblock %}
+
+{% block menu %}
+
+    {% if name != "Visitor" and name != "Guest!"%}
+      <li><a href='/blog'>Blog</a></li><br>
+      <li><a href='/blog/logout'>Log Out</a></li><br>
+    {% elif name != "Visitor" %}
+        <li><a href='/blog/login'>Log In</a></li><br>
+        <li><a href='/blog/signup'>Sign Up</a></li><br>
+    {% endif %}
+
+{% endblock %}

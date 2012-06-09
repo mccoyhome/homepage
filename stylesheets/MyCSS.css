@@ -1,0 +1,28 @@
+body {
+  position: relative;
+  font-family: sans-serif;
+  width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+label {
+  display: block;
+  font-size: 30px;
+}
+
+hr {
+  margin: 20px auto;
+}
+
+img {
+  float: right;
+}
+
+.right {
+  float: right;
+}
+
+.centre {
+  text-align: center;
+}

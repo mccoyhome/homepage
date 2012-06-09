@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}blog{% endblock %}
+
+{% block head %}blog{% endblock %}
+
+{% block menu %}
+  <li><a href='/'>Home</a></li><br>
+  <li><a href='/blog/logout'>Log Out</a></li><br>
+  <br><br>
+  </ol>
+  <input type="submit" value="New">
+{% endblock %}
+
+{% block pane %}
+
+  {% for entry in contents %}
+  <div class="content">
+
+    <div class="content-subject">{{entry.username}} wrote:
+      <a href="/{{entry.id}}blog/{{entry.key().id()}}">{{entry.subject}}</a>
+      <small class="content-time">{{entry.last_modified.strftime("%Z %H:%M %A, %d %B %Y")}}</small>
+      <br>
+    </div>
+
+    <pre class="content-body">{{entry.content}}<hr></pre>
+  </div>
+  {% endfor %}
+
+{% endblock %})

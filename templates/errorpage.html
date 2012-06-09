@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}blog{% endblock %}
+
+{% block head %}blog post{% endblock %}
+
+{% block menu %}
+    <li><a href='/'>Home</a></li><br>
+    <li><a href='/blog'>Blog</a></li><br>
+    <br>
+    </ol>
+{% endblock %}
+
+{% block pane %}
+    <label>
+      <div>subject</div>
+      <input type="text" name="subject" value="{{subject}}">
+    </label>
+
+    <div class="error" style="background-color:#FFdab9;;width:508px">{{error}}</div>
+
+    <label>
+      <div>content</div>
+      <textarea name="content">{{content}}</textarea>
+    </label>
+{% endblock %}

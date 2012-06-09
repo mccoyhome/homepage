@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}confirm{% endblock %}
+
+{% block head %}confirm deletion{% endblock %}
+
+{% block menu %}
+    <li><a href='/'>Home</a></li><br>
+    <li><a href='/blog'>Blog</a></li><br>
+    <br><br>
+    </ol>
+    <input type="submit" value="Confirm">
+{% endblock %}
+
+{% block pane %}
+    <h2>To delete <em>{{subject}}</em>;<br>enter your password {{name}}</h2>
+            <table>
+              <tr>
+                <td class="label">
+                  Password
+                </td>
+                <td>
+                  <input type="password" name="password" value="">
+                </td>
+              </tr>
+
+            </table>
+
+            <div class="error" style="background-color:#FFdab9;;width:508px">{{error}}</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}blog{% endblock %}
+
+{% block head %}Sign up{% endblock %}
+
+{% block menu %}
+    <li><a href='/'>Home</a></li><br>
+    <br><br><br>
+    </ol>
+    <input type="submit" value="Subscribe">
+{% endblock %}
+
+{% block pane %}
+
+    <table>
+      <tr>
+        <td class="label">
+          Username
+          <br>
+          <small>(3-20 letters or numbers, no spaces)</small>
+        <td>
+          <input type="text" name="username" value="{{username}}">
+        </td>
+        <div class="error" style="background-color:#FFdab9;;width:508px">{{bad_name}}</div>
+
+      </tr>
+
+      <tr>
+        <td class="label">
+          Password
+        </td>
+        <td>
+          <input type="password" name="password" value="">
+        </td>
+        <div class="error" style="background-color:#FFdab9;;width:508px">{{bad_pass}}</div>
+
+      </tr>
+
+      <tr>
+        <td class="label">
+          Verify Password
+        </td>
+        <td>
+          <input type="password" name="verify" value="">
+        </td>
+        <div class="error" style="background-color:#FFdab9;;width:508px">{{bad_verify}}</div>
+      </tr>
+
+      <tr>
+        <td class="label">
+          Email (optional)
+        </td>
+        <td>
+          <input type="text" name="email" value="{{email}}">
+        </td>
+        <div class="error" style="background-color:#FFdab9;;width:508px">{{bad_mail}}</div>
+      </tr>
+    </table>
+{% endblock %}
