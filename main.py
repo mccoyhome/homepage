@@ -384,7 +384,7 @@ class PagesHandler(BaseHandler):
                 contents = blog_content(True)
                 ident = str(int(c.key().id()))
                 memcache.set(ident, None)
-                mail.send_mail('mccoyhome@gmail.com' ,'mccoyhome@btinternet.com',
+                mail.send_mail('mccoyhome@gmail.com' ,'john.mccoyhome.co.uk',
                 'Edit of post - %s - by %s' % (subject, name),
                 content)
 
