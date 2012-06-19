@@ -444,9 +444,9 @@ class BlogJson(BaseHandler):
 
     def get(self):
 
-        name = logged_in(self)
-        if name == None:
-            self.redirect("/blog/login")
+        # name = logged_in(self)
+        # if name == None:
+        #     self.redirect("/blog/login")
 
         contents = blog_content()
         result = []
